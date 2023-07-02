@@ -14,7 +14,6 @@ def main():
     hh_api_client = HHapiclient()
     employers_list = hh_api_client.get_employer_data()
     vacancies_list = hh_api_client.get_vacancies_data()
-    # print(vacancies_list)
 
     insert_employer_data_into_db(employers_list, db)
     insert_vacancy_data_into_db(vacancies_list, db)
