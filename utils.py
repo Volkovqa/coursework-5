@@ -6,14 +6,15 @@ def insert_vacancy_data_into_db(data, db):
                VALUES (%s, %s, %s, %s, %s, %s, %s)
             """,
                         (
-                            vacancy['vacancy_id'],
-                            vacancy['vacancy_name'],
-                            vacancy['employer_id'],
-                            vacancy['salary_from'],
-                            vacancy['salary_to'],
-                            vacancy['city'],
-                            vacancy['url']
+                            vacancy['id'],
+                            vacancy['name'],
+                            vacancy['employer']['id'],
+                            vacancy['salary']['from'],
+                            vacancy['salary']['to'],
+                            vacancy['area']['name'],
+                            vacancy['alternate_url']
                         ))
+        db.conn.commit()
 
 
 def insert_employer_data_into_db(data, db):
@@ -24,7 +25,8 @@ def insert_employer_data_into_db(data, db):
                 VALUES (%s, %s, %s)
             """,
                         (
-                            employer['employer_id'],
-                            employer['employer_name'],
+                            employer['id'],
+                            employer['name'],
                             employer['url']
                         ))
+        db.conn.commit()

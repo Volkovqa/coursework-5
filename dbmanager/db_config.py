@@ -1,5 +1,5 @@
 postgres_db_config = {
-    'dbname': 'hh_info',
+    'dbname': 'hhru',
     'user': 'postgres',
     'password': 'pass',
     'host': 'localhost',

@@ -23,3 +23,9 @@ salary_to int,
 city varchar(100),
 url varchar(100)
 );
+
+-- Очищаем таблицы перед следующим запуском
+
+DELETE FROM employers
+
+DELETE FROM vacancies
