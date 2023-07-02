@@ -59,3 +59,11 @@ class DBManager:
             )
             result = cur.fetchall()
             return result
+
+    def truncate_tables(self):
+        with self.conn.cursor() as cur:
+            cur.execute(f"""
+                DELETE FROM employers;
+                DELETE FROM vacancies
+            """)
+        self.conn.commit()
