@@ -53,7 +53,7 @@ class DBManager:
         with self.conn.cursor() as cur:
             cur.execute(
                 f"""
-                SELECT vacancy_name, salary_from, salary_to, url FROM vacancies 
+                SELECT vacancy_name, (salary_from + salary_to) / 2 AS salary, url FROM vacancies 
                 WHERE vacancy_name ILIKE '%{keyword}%'
                 """
             )
